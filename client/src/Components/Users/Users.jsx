@@ -35,9 +35,9 @@ const Users =() =>{
                     console.error(e)
                 }}   
     return( <>
-    <h1>משתמשים</h1>
-        <div className="card flex flex-column md:flex-row gap-3">
-                     <div className="p-inputgroup flex-1" style={{marginLeft:"50%",marginRight:"30%"}}>
+    <h1 style={ {margin:"0"}}  className="card flex justify-content-center">משתמשים</h1>
+        <div style={ {margin:"0"}} className="card flex flex-column md:flex-row gap-3">
+                     <div className="p-inputgroup flex-1" style={{marginLeft:"40%",marginRight:"40%"}}>
                  <InputText  ref={userNameRef} placeholder="הכנס שם משתמש" style={{direction:"rtl"}} onChange={()=>{userNameRef.current.value?searchByUserName(userNameRef):getUsers()}}/>
              <Button icon="pi pi-search" severity="info" onClick={()=>{searchByUserName()}} />
             </div> 

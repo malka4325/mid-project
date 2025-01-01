@@ -24,7 +24,7 @@ const HomePage =() =>{
 ];
 
   return (<>
-      <div className="card">
+      <div style={{marginBottom:"0"}} className="card">
           <TabMenu model={items} />
 
       </div>

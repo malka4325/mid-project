@@ -84,10 +84,8 @@ const OneTodo = (props) => {
     }
   }, [props.todo.tags]);
 
-  // [{name:props.todo.tags.toString(),code:'old'}]
-  // props.todo.tags.split(",").map((t)=>{cities.push({name:t,code:"old"})})
   return (<>
-    <div className="card flex justify-content-center">
+    <div style={ {margin:"0"}} className="card flex justify-content-center">
       <Dialog style={{ direction: "rtl" }}severity="info"
         visible={visible}
         modal
@@ -118,7 +116,7 @@ const OneTodo = (props) => {
         )}
       ></Dialog>
     </div>
-    <div className="card flex justify-content-center">
+    <div style={ {margin:"0"}}className="card flex justify-content-center">
       <Card title ={props.todo.title}footer={footer} className="md:w-25rem">
         <p className="m-0">
         

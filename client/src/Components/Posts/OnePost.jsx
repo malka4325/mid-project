@@ -67,7 +67,7 @@ const OnePost = (props) => {
   );
 
   return (<>
-    <div className="card flex justify-content-center">
+    <div style={ {margin:"0"}}  className="card flex justify-content-center">
       <Dialog style={{ direction: "rtl" }}severity="info"
         visible={visible}
         modal
@@ -82,7 +82,7 @@ const OnePost = (props) => {
               <InputText id="username" defaultValue={props.post.title} className="bg-white-alpha-20 border-none p-3 text-primary-50" ref={titleRef}></InputText>
             </div>
               <div className="inline-flex flex-column gap-2">
-                          <FloatLabel style={{color:"white"}}  className="text-primary-50 font-semibold">
+                          <FloatLabel style={{color:"white"}}  className="bg-white-alpha-20 border-none p-3 text-primary-50">
                 <InputTextarea defaultValue={props.post.body}style={{color:"white"}} className="bg-white-alpha-20 border-none p-3 text-primary-50"id="description" ref={bodyRef}  rows={5} cols={30} />
                 <label htmlFor="description">גוף המאמר</label>
             </FloatLabel>
@@ -96,14 +96,11 @@ const OnePost = (props) => {
         )}
       ></Dialog>
     </div>
-    <div className="card flex justify-content-center">
+    <div style={ {margin:"0"}} className="card flex justify-content-center">
       <Card title ={props.post.title}footer={footer} className="md:w-25rem">
-      <Fieldset legend="גוף המאמר" toggleable>
+      <Fieldset toggleable  legend="גוף המאמר" >
                 <p className="m-0">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                   {props.post.body}
                 </p>
             </Fieldset>
       </Card>

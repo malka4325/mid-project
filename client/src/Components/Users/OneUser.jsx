@@ -59,7 +59,7 @@ const OneUser = (props) => {
  
 
   return (<>
-    <div className="card flex justify-content-center">
+    <div style={ {margin:"0"}} className="card flex justify-content-center">
     <Dialog style={{direction:"rtl"}}
             visible={visible}
             modal
@@ -108,7 +108,7 @@ const OneUser = (props) => {
            )}
        ></Dialog>
     </div>
-    <div className="card flex justify-content-center">
+    <div style={ {margin:"0"}} className="card flex justify-content-center">
       <Card title ={props.user.userName} footer={footer} className="md:w-25rem">
         <p className="m-0">
           <h1></h1>

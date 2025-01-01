@@ -41,16 +41,16 @@ const Posts = () => {
     }
 
     return (
-        <>
-  <h1>מאמרים</h1>
-        <div className="card flex flex-column md:flex-row gap-3">
-            <div className="p-inputgroup flex-1" style={{ marginLeft: "40%", marginRight: '20%' }}>
+        <> 
+    <h1 style={ {margin:"0"}}  className="card flex justify-content-center">מאמרים</h1>
+        <div style={ {margin:"0"}} className="card flex flex-column md:flex-row gap-3">
+         
 
-                <div className="p-inputgroup flex-1" style={{ marginLeft: "30%", marginRight: '20%' }}>
+                <div className="p-inputgroup flex-1" style={{ marginLeft: "40%", marginRight: '40%' }}>
                     <InputText ref={titleRef} placeholder="הכנס שם מאמר" style={{ direction: "rtl" }} onChange={() => { titleRef.current.value ? searchByTitle(titleRef) : getPosts() }} />
                     <Button icon="pi pi-search" severity="info" onClick={() => { searchByTitle() }} />
 
-                </div>
+                
             </div></div>
             <Button icon="pi pi-plus" severity="info" rounded aria-label="Filter" onClick={() => setVisible(true)} style={{ marginRight: "50px", marginBottom: '50px', right: 0, bottom: 0, position: 'fixed' }} direction="down-right" />
 

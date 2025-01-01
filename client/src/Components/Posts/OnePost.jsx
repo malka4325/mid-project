@@ -8,6 +8,8 @@ import { InputText } from 'primereact/inputtext';
 import { Fieldset } from 'primereact/fieldset';
 
 import { OverlayPanel } from 'primereact/overlaypanel';
+import { FloatLabel } from 'primereact/floatlabel';
+import { InputTextarea } from 'primereact/inputtextarea';
 const OnePost = (props) => {
 
   const op = useRef(null);
@@ -40,7 +42,7 @@ const OnePost = (props) => {
     const updatePost = {
       _id: props.post._id,
       title: titleRef.current.value,
-      body: bodyRef.current.value.split(",")
+      body: bodyRef.current.value
     }
 
 
@@ -61,34 +63,9 @@ const OnePost = (props) => {
       <Button rounded aria-label="Filter" label="עדכן" icon="pi pi-pencil" severity="info" onClick={() => setVisible(true)} />
 
       <Button style={{ marginLeft: "30px" }} rounded aria-label="Filter" label="מחק" icon="pi pi-eraser" onClick={deletePosts} severity="danger" />
-      <Button rounded aria-label="Filter" icon="pi pi-check" onClick={updateComplete} severity="success" style={{ backgroundColor: props.post.completed ? 'green' : 'gray', marginLeft: "30px", borderColor: props.post.completed ? 'green' : 'gray' }} />
-      <div className="card flex justify-content-center">
-            <Button type="button"  label="פרטים נוספים" onClick={(e) => op.current.toggle(e)} />
-            <OverlayPanel ref={op}>
-              
-        <div className="card">
-            <Fieldset legend={props.post.title}>
-                <p className="m-0">
-                  <h2>זמן יצירת המשימה:</h2>
-                  <h3>{props.post.timestamps}</h3>
-                </p>
-            </Fieldset>
-        </div>
-        
-            </OverlayPanel>
-        </div>
-    </>
+     </>
   );
-  const [selectedCities, setSelectedCities] = useState(null);
-  const cities = [
-      { name: 'בית', code: 'NY' },
-      { name: 'לימודים', code: 'RM' },
-      { name: 'עבודה', code: 'LDN' },
-      { name: 'בריאות', code: 'IST' },
-  ];
 
-  // [{name:props.post.body.toString(),code:'old'}]
-  // props.post.body.split(",").map((t)=>{cities.push({name:t,code:"old"})})
   return (<>
     <div className="card flex justify-content-center">
       <Dialog style={{ direction: "rtl" }}severity="info"
@@ -104,18 +81,13 @@ const OnePost = (props) => {
               </label>
               <InputText id="username" defaultValue={props.post.title} className="bg-white-alpha-20 border-none p-3 text-primary-50" ref={titleRef}></InputText>
             </div>
-            <div className="inline-flex flex-column gap-2">
-              <label htmlFor="username" className="text-primary-50 font-semibold">
-                תגיות
-              </label>
-              {/* <InputText id="username" defaultValue={props.post.body} className="bg-white-alpha-20 border-none p-3 text-primary-50" ref={bodyRef}></InputText> */}
-           
-            <MultiSelect  value={selectedCities} onChange={(e) =>{ setSelectedCities(e.value);return}} inputRef={bodyRef} options={cities} optionLabel="name" 
-               maxSelectedLabels={4}  className="bg-white-alpha-20 border-none p-3 text-primary-50" 
-               defaultValue={props.todo.tags.map(tag => ({ name: tag, code: tag }))} // ברירת המחדל
-               />
+              <div className="inline-flex flex-column gap-2">
+                          <FloatLabel style={{color:"white"}}  className="text-primary-50 font-semibold">
+                <InputTextarea defaultValue={props.post.body}style={{color:"white"}} className="bg-white-alpha-20 border-none p-3 text-primary-50"id="description" ref={bodyRef}  rows={5} cols={30} />
+                <label htmlFor="description">גוף המאמר</label>
+            </FloatLabel>
+                    </div>
         
-            </div>
             <div className="flex align-items-center gap-2">
               <Button label="עדכן" onClick={(e) => { update(); hide(e) }} text className="p-3 w-full text-primary-50 border-1 border-white-alpha-30 hover:bg-white-alpha-10"></Button>
               <Button label="ביטול" onClick={(e) => hide(e)} text className="p-3 w-full text-primary-50 border-1 border-white-alpha-30 hover:bg-white-alpha-10"></Button>
@@ -126,11 +98,14 @@ const OnePost = (props) => {
     </div>
     <div className="card flex justify-content-center">
       <Card title ={props.post.title}footer={footer} className="md:w-25rem">
-        <p className="m-0">
-        
-          {/* {console.log(props.post.body)} */}
-          {props.post.body.map((tag) => <h2>{tag}</h2>)}
-        </p>
+      <Fieldset legend="גוף המאמר" toggleable>
+                <p className="m-0">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </Fieldset>
       </Card>
     </div></>
   )

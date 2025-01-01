@@ -35,6 +35,7 @@ const Users =() =>{
                     console.error(e)
                 }}   
     return( <>
+    <h1>משתמשים</h1>
         <div className="card flex flex-column md:flex-row gap-3">
                      <div className="p-inputgroup flex-1" style={{marginLeft:"50%",marginRight:"30%"}}>
                  <InputText  ref={userNameRef} placeholder="הכנס שם משתמש" style={{direction:"rtl"}} onChange={()=>{userNameRef.current.value?searchByUserName(userNameRef):getUsers()}}/>

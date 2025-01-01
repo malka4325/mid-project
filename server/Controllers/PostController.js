@@ -38,7 +38,15 @@ const updatepost=await post.save()
 res.json(await Post.find())
 
 }
-
+const getpostByTitle = async (req, res) => {
+    const { title } = req.params
+    const post = await Post.find({ title:{$regex :title}  }).lean()
+    console.log(post);
+    if (!post) {
+        return res.json([])
+    }
+    res.json(post)
+}
 const deletePost = async (req, res) => {
     const {id } = req.params
     if (!id)
@@ -51,4 +59,4 @@ const del=await post.deleteOne()
 res.json(await Post.find())
 
 }
-module.exports = { createNewPost,getAllPosts,getPostById,updatePost,deletePost }
+module.exports = { createNewPost,getAllPosts,getPostById,updatePost,deletePost ,getpostByTitle}

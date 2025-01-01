@@ -31,9 +31,8 @@ const Posts = () => {
     const searchByTitle = async (titleRef) => {
 
         try {
-            const res = await axios.get(`http://localhost:4300/api/posts/byTilte/${titleRef.current.value}`)
+            const res = await axios.get(`http://localhost:4300/api/posts/byTitle/${titleRef.current.value}`)
             if (res.status === 200) {
-                console.log(res);
                 setPosts(res.data);
             }
         } catch (e) {
@@ -42,11 +41,13 @@ const Posts = () => {
     }
 
     return (
-        <><div className="card flex flex-column md:flex-row gap-3">
+        <>
+  <h1>מאמרים</h1>
+        <div className="card flex flex-column md:flex-row gap-3">
             <div className="p-inputgroup flex-1" style={{ marginLeft: "40%", marginRight: '20%' }}>
 
                 <div className="p-inputgroup flex-1" style={{ marginLeft: "30%", marginRight: '20%' }}>
-                    <InputText ref={titleRef} placeholder="הכנס שם משימה" style={{ direction: "rtl" }} onChange={() => { titleRef.current.value ? searchByTitle(titleRef) : getPosts() }} />
+                    <InputText ref={titleRef} placeholder="הכנס שם מאמר" style={{ direction: "rtl" }} onChange={() => { titleRef.current.value ? searchByTitle(titleRef) : getPosts() }} />
                     <Button icon="pi pi-search" severity="info" onClick={() => { searchByTitle() }} />
 
                 </div>

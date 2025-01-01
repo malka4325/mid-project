@@ -5,8 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
-    "@mui/joy": "^5.0.0-beta.51",
-    "@mui/material": "^6.2.1",
+    "@types/react": "^18.2.38",
     "axios": "^1.7.9",
     "cra-template": "1.2.0",
     "primeflex": "^3.3.1",
@@ -14,7 +13,9 @@
     "primereact": "^10.8.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-scripts": "5.0.1"
+    "react-router-dom": "^7.1.1",
+    "react-scripts": "5.0.1",
+    "react-transition-group": "^4.4.5"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -14,7 +14,7 @@ const AddPost = (props) => {
         
         const newPost = {
             title: titleRef.current.value,
-            body: bodyRef.current.value.split(",")
+            body: bodyRef.current.value
         }
         try {
             const res = await axios.post('http://localhost:4300/api/posts', newPost)
@@ -47,9 +47,9 @@ const AddPost = (props) => {
                         <InputText id="username"  className="bg-white-alpha-20 border-none p-3 text-primary-50"  ref={titleRef}></InputText>
                     </div>   
                     <div className="inline-flex flex-column gap-2">
-                          <FloatLabel className="bg-white-alpha-20 border-none p-3 text-primary-50">
+                          <FloatLabel style={{color:"white"}}  className="bg-white-alpha-20 border-none p-3 text-primary-50">
                 <InputTextarea className="bg-white-alpha-20 border-none p-3 text-primary-50"id="description" ref={bodyRef}  rows={5} cols={30} />
-                <label htmlFor="description">Description</label>
+                <label htmlFor="description">גוף המאמר</label>
             </FloatLabel>
                     </div>
 

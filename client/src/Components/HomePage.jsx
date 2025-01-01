@@ -1,14 +1,7 @@
+const HomePage = () => {
+    return <><h1>ברוכים הבאים!</h1>
+    <h3>האתר פותח עי מלי שמואלביץ וחנה רבקה גרינוולד</h3>
+    </>;
+};
 
-import { useState,useEffect } from 'react'
-
-const HomePage =() =>{
-
-    return(
-        <>
-      HomePage
-     
-        </>
-    )
-}
-
-export default HomePage
+export default HomePage;

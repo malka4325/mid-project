@@ -49,7 +49,7 @@ const getTodoByTitle = async (req, res) => {
     res.json(todo)
 }
 const updateTodo = async (req, res) => {
-    const { _id, title, tags, completed } = req.body
+    const { _id, title, tags } = req.body
     if (!_id || !title)
         return res.status(400).json({ message: "fildes are required" })
     const todo = await Todo.findById(_id).exec()
@@ -58,7 +58,6 @@ const updateTodo = async (req, res) => {
     }
     todo.title = title
     todo.tags = tags
-    todo.completed = completed
 
     await todo.save()
     res.json(await Todo.find())

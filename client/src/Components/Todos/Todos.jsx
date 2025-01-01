@@ -50,10 +50,11 @@ const Todos =() =>{
                 }}
 
     return(
-        <><div className="card flex flex-column md:flex-row gap-3">
+        <><h1>משימות</h1>
+        <div className="card flex flex-column md:flex-row gap-3">
                      <div className="p-inputgroup flex-1" style={{marginLeft:"40%",marginRight:'20%'}}> 
        
-                     <div className="p-inputgroup flex-1" style={{marginLeft:"30%",marginRight:'20%'}}>
+                     <div className="p-inputgroup flex-1" style={{marginLeft:"20%",marginRight:'20%'}}>
                      <InputText  ref={titleRef} placeholder="הכנס שם משימה" style={{direction:"rtl"}} onChange={()=>{titleRef.current.value?searchByTitle(titleRef):getTodos()}}/>
              <Button icon="pi pi-search" severity="info" onClick={()=>{searchByTitle()}} />
 

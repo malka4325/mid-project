@@ -86,7 +86,7 @@ const OnePost = (props) => {
     <div style={ {margin:"0"}} className="card flex justify-content-center">
       <Card title ={props.post.title}footer={footer} className="md:w-25rem">
       <Fieldset toggleable  legend="גוף המאמר" >
-                <p className="m-0">
+                <p className="m-0"style={{width:"20px"}}>
                    {props.post.body}
                 </p>
             </Fieldset>

@@ -20,14 +20,14 @@ const HomePage = () => {
         icon: 'pi pi-check-square ',
     }
     ];
-    return <>  <div style={{marginBottom:"0"}} className="card">
+    return <div className="card" style={{height:"700px"}}>  <div style={{marginBottom:"0"}} className="card">
     <TabMenu model={items} />
 
 </div>
 
-    <h1 style={{margin:"0"}} className="card">ברוכים הבאים!</h1>
+    <h1 style={{margin:"0"}} className="card">!ברוכים הבאים</h1>
     <h3 style={{margin:"0"}} className="card">האתר פותח עי מלי שמואלביץ וחנה רבקה גרינוולד</h3>
-    </>;
+    </div>;
 };
 
 export default HomePage;

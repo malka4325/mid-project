@@ -12,7 +12,7 @@ import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import './index.css';
 import './flags.css';
 import Posts from './Components/Posts/Posts';
-import Nav from "./Components/Nav";
+import Nav from './Components/Nav';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './Components/HomePage';
 

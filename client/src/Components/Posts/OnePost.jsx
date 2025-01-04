@@ -1,18 +1,14 @@
 import axios from 'axios'
 import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
-import { MultiSelect } from 'primereact/multiselect';
 import { useRef, useState } from 'react';
 import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
 import { Fieldset } from 'primereact/fieldset';
-
-import { OverlayPanel } from 'primereact/overlaypanel';
 import { FloatLabel } from 'primereact/floatlabel';
 import { InputTextarea } from 'primereact/inputtextarea';
 const OnePost = (props) => {
 
-  const op = useRef(null);
   const deletePosts = async () => {
 
     try {
@@ -25,16 +21,7 @@ const OnePost = (props) => {
     }
   }
 
-  const updateComplete = async () => {
-    try {
-      const res = await axios.put(`http://localhost:4300/api/posts/${props.post._id}`)
-      if (res.status === 200) {
-        props.setPosts(res.data)
-      }
-    } catch (e) {
-      console.error(e)
-    }
-  }
+
   const titleRef = useRef("")
   const bodyRef = useRef("")
   const update = async () => {

@@ -121,7 +121,7 @@ const OneTodo = (props) => {
         <p className="m-0">
         
           {/* {console.log(props.todo.tags)} */}
-          {props.todo.tags.map((tag) => <h2>{tag}</h2>)}
+          {props.todo.tags.map((tag) => <h3>{tag}</h3>)}
         </p>
       </Card>
     </div></>

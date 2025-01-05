@@ -12,7 +12,6 @@ const Posts = () => {
 
     const [posts, setPosts] = useState([])
     const [visible, setVisible] = useState(false);
-    const [flag, setFlag] = useState(true)
     const titleRef = useRef("")
     useEffect(() => { getPosts() }, [])
     const getPosts = async () => {
@@ -20,14 +19,12 @@ const Posts = () => {
             const res = await axios.get('http://localhost:4300/api/posts')
             if (res.status === 200) {
                 setPosts(res.data);
-                setFlag(true)
-
             }
         } catch (e) {
             console.error(e)
         }
     }
-    // console.log(posts)
+
     const searchByTitle = async (titleRef) => {
 
         try {
@@ -48,14 +45,14 @@ const Posts = () => {
 
                 <div className="p-inputgroup flex-1" style={{ marginLeft: "40%", marginRight: '40%' }}>
                     <InputText ref={titleRef} placeholder="הכנס שם מאמר" style={{ direction: "rtl" }} onChange={() => { titleRef.current.value ? searchByTitle(titleRef) : getPosts() }} />
-                    <Button icon="pi pi-search" severity="info" onClick={() => { searchByTitle() }} />
+                    <Button icon="pi pi-search" severity="info"  />
 
                 
             </div></div>
             <Button icon="pi pi-plus" severity="info" rounded aria-label="Filter" onClick={() => setVisible(true)} style={{ marginRight: "50px", marginBottom: '50px', right: 0, bottom: 0, position: 'fixed' }} direction="down-right" />
 
             {visible && <AddPost setPosts={setPosts} setVisible={setVisible} visible={visible} />}
-            {posts.map((post) => <OnePost post={post} setPosts={setPosts} />)}
+            {posts.sort((a, b) => a._id < b._id).map((post) => <OnePost post={post} setPosts={setPosts} />)}
 
         </>
     )

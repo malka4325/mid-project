@@ -11,8 +11,6 @@ const AddUser = (props) => {
     const emailRef = useRef("")
     const addressRef = useRef("")
     const phoneRef = useRef("")
-   
-
     const addUser = async () => {
         
         const newUser = {

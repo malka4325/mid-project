@@ -56,7 +56,6 @@ const AddTodo = (props) => {
                         <label htmlFor="username" className="text-primary-50 font-semibold">
                             תגיות
                         </label>
-                        {/* <InputText id="username"  className="bg-white-alpha-20 border-none p-3 text-primary-50"  ref={tagsRef}></InputText> */}
                        
                         <MultiSelect  value={selectedCities} onChange={(e) =>{ setSelectedCities(e.value);return}} inputRef={tagsRef} options={cities} optionLabel="name" 
                maxSelectedLabels={5}     className="bg-white-alpha-20 border-none p-3 text-primary-50" 
@@ -66,18 +65,7 @@ const AddTodo = (props) => {
                 color: '#ffffff'
             }}
              />
-        {/* <div>
-            <MultiSelect 
-                value={selectedCities} 
-                options={cities}
-                inputRef={tagsRef}
-                onChange={(e) => setSelectedCities(e.value)} 
-                className="bg-white-alpha-20 border-none p-3 text-primary-50" 
-                placeholder="בחר אפשרות"
-            />
-        </div> */}
 
-      
                     </div>
                     <div className="flex align-items-center gap-2">
                         <Button label="הוסף" onClick={(e) =>{addTodo(); hide(e)} } text className="p-3 w-full text-primary-50 border-1 border-white-alpha-30 hover:bg-white-alpha-10"></Button>

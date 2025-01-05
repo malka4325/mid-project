@@ -26,7 +26,6 @@ const Todos =() =>{
         } catch (e) {
             console.error(e)
         }}
-        // console.log(todos)
         const searchByTitle=async(titleRef)=>{
             
             try {  
@@ -56,7 +55,7 @@ const Todos =() =>{
        
                      <div className="p-inputgroup flex-1" style={{marginRight:'20%'}}>
                      <InputText  ref={titleRef} placeholder="הכנס שם משימה" style={{direction:"rtl"}} onChange={()=>{titleRef.current.value?searchByTitle(titleRef):getTodos()}}/>
-             <Button icon="pi pi-search" severity="info" onClick={()=>{searchByTitle()}} />
+             <Button icon="pi pi-search" severity="info"  />
 
      </div>
 
@@ -67,7 +66,7 @@ const Todos =() =>{
         <Button icon="pi pi-plus" severity="info" rounded aria-label="Filter" onClick={() => setVisible(true)}style={{marginRight:"50px",marginBottom:'50px' ,right: 0, bottom: 0 ,position:'fixed'}}direction="down-right" />
 
         {visible&&<AddTodo setTodos={setTodos} setVisible={setVisible} visible={visible}  />}
-        {todos.map((todo)=><OneTodo todo={todo} setTodos={setTodos}/>)}
+        {todos.sort((a, b) => a._id < b._id).map((todo)=><OneTodo todo={todo} setTodos={setTodos}/>)}
 
         </>
     )

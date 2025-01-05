@@ -34,7 +34,7 @@ const OneUser = (props) => {
          email: emailRef.current.value,
         address: addressRef.current.value,
         phone: phoneRef.current.value,
-    }//
+    }
     console.log(updateUser);
     try {
       const res = await axios.put('http://localhost:4300/api/users', updateUser)

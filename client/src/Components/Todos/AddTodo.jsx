@@ -9,8 +9,8 @@ const AddTodo = (props) => {
     const titleRef = useRef("")
     const tagsRef = useRef("")
    
-    const [selectedCities, setSelectedCities] = useState(null);
-    const cities = [
+    const [selectedTagsOp, setSelectedTagsOp] = useState(null);
+    const tagsOp = [
       { name: 'בית', code: 'NY' },
       { name: 'לימודים', code: 'RM' },
       { name: 'עבודה', code: 'LDN' },
@@ -57,7 +57,7 @@ const AddTodo = (props) => {
                             תגיות
                         </label>
                        
-                        <MultiSelect  value={selectedCities} onChange={(e) =>{ setSelectedCities(e.value);return}} inputRef={tagsRef} options={cities} optionLabel="name" 
+                        <MultiSelect  value={selectedTagsOp} onChange={(e) =>{ setSelectedTagsOp(e.value);return}} inputRef={tagsRef} options={tagsOp} optionLabel="name" 
                maxSelectedLabels={5}     className="bg-white-alpha-20 border-none p-3 text-primary-50" 
                style={{
                 border: '1px solid var(--primary-color)',

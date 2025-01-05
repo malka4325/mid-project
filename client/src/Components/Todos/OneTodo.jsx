@@ -5,9 +5,6 @@ import { MultiSelect } from 'primereact/multiselect';
 import { useEffect, useRef, useState } from 'react';
 import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
-import { Fieldset } from 'primereact/fieldset';
-
-import { OverlayPanel } from 'primereact/overlaypanel';
 const OneTodo = (props) => {
 
   const op = useRef(null);
@@ -65,22 +62,22 @@ const OneTodo = (props) => {
         </div>
     </>
   );
-  const cities = [
+  const tagsOp = [
     { name: 'בית', code: 'בית' },
     { name: 'לימודים', code: 'לימודים' },
     { name: 'עבודה', code: 'עבודה' },
     { name: 'בריאות', code: 'בריאות' },
   ];
   
-  const [selectedCities, setSelectedCities] = useState([]);
+  const [selectedTagsOp, setSelectedTagsOp] = useState([]);
   
   useEffect(() => {
     if (props.todo.tags && props.todo.tags.length > 0) {
       const formattedTags = props.todo.tags.map(tag => {
         const trimmedTag = tag.trim(); 
-        return cities.find(city => city.name === trimmedTag) || { name: trimmedTag, code: trimmedTag };
+        return tagsOp.find(city => city.name === trimmedTag) || { name: trimmedTag, code: trimmedTag };
       });
-      setSelectedCities(formattedTags);
+      setSelectedTagsOp(formattedTags);
     }
   }, [props.todo.tags]);
 
@@ -104,7 +101,7 @@ const OneTodo = (props) => {
                 תגיות
               </label>
            
-            <MultiSelect  value={selectedCities} onChange={(e) =>{ setSelectedCities(e.value);return}} inputRef={tagsRef} options={cities} optionLabel="name" 
+            <MultiSelect  value={selectedTagsOp} onChange={(e) =>{ setSelectedTagsOp(e.value);return}} inputRef={tagsRef} options={tagsOp} optionLabel="name" 
                maxSelectedLabels={4}  className="bg-white-alpha-20 border-none p-3 text-primary-50" />
         
             </div>

@@ -1,7 +1,6 @@
 import axios from 'axios'
 import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
-import { MultiSelect } from 'primereact/multiselect';
 import { useRef, useState } from 'react';
 import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';

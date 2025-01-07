@@ -46,13 +46,21 @@ const OneUser = (props) => {
       alert(e.response.data.message)
     }
   }
+  const sendEmail=async ()=>{
+    try {
+      const res = await axios.post('https://hook.eu2.make.com/7dj5dx13p0m3big3lqqdsblouckelein', {mail:props.user.email,name:props.user.name})
+      if (res.status === 200) {
+alert("email send")  }}
+    catch (e) {console.error(e) }
+    }
   const [visible, setVisible] = useState(false);
   const footer = (
     <>
       <Button rounded aria-label="Filter" label="עדכן" icon="pi pi-pencil" severity="info" onClick={() => setVisible(true)} />
 
       <Button style={{ marginLeft: "30px" }} rounded aria-label="Filter" label="מחק" icon="pi pi-eraser" onClick={deleteUsers} severity="danger" />
-     
+      <Button style={{ marginLeft: "30px" }} rounded aria-label="Filter" label="שלח מייל" icon="pi pi-eraser" onClick={sendEmail} severity="success" />
+
     </>
   );
  

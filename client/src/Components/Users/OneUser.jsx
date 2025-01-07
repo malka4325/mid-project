@@ -59,7 +59,7 @@ alert("email send")  }}
       <Button rounded aria-label="Filter" label="עדכן" icon="pi pi-pencil" severity="info" onClick={() => setVisible(true)} />
 
       <Button style={{ marginLeft: "30px" }} rounded aria-label="Filter" label="מחק" icon="pi pi-eraser" onClick={deleteUsers} severity="danger" />
-      <Button style={{ marginLeft: "30px" }} rounded aria-label="Filter" label="שלח מייל" icon="pi pi-eraser" onClick={sendEmail} severity="success" />
+      <Button style={{ marginTop: "10px",marginLeft:"10px" }} rounded aria-label="Filter" label="שלח מייל" icon="pi pi-envelope" onClick={sendEmail} severity="success" />
 
     </>
   );

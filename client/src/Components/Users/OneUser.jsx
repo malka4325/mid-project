@@ -48,7 +48,7 @@ const OneUser = (props) => {
   }
   const sendEmail=async ()=>{
     try {
-      const res = await axios.post('https://hook.eu2.make.com/7dj5dx13p0m3big3lqqdsblouckelein', {mail:props.user.email,name:props.user.name})
+      const res = await axios.post('https://hook.eu2.make.com/7dj5dx13p0m3big3lqqdsblouckelein', {mail:props.user.email,subject:`הי ${props.user.name}`,mes:"תודה שבחרת באתר שלנו"})
       if (res.status === 200) {
 alert("email send")  }}
     catch (e) {console.error(e) }

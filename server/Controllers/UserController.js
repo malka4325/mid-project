@@ -4,8 +4,7 @@ const createNewUser = async (req, res) => {
     const { name, userName,email,address,phone } = req.body
     if (!userName||!email)
         return res.status(400).json({ message: 'userName and email is required' })
-     if (phone.length<9 || phone.length>10)
-            return res.status(400).json({ message: 'טלפון לא תקין' })
+
 
     const user = await User.create({ name, userName,email,address,phone})
     if (!user)

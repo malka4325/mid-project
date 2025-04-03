@@ -11,7 +11,7 @@ const OneTodo = (props) => {
   const deleteTodos = async () => {
 
     try {
-      const res = await axios.delete(`http://localhost:4300/api/todos/${props.todo._id}`)
+      const res = await axios.delete(`http://localhost:4500/api/todos/${props.todo._id}`)
       if (res.status === 200) {
         props.setTodos(res.data)
       }
@@ -20,9 +20,10 @@ const OneTodo = (props) => {
     }
   }
 
+  
   const updateComplete = async () => {
     try {
-      const res = await axios.put(`http://localhost:4300/api/todos/${props.todo._id}`)
+      const res = await axios.put(`http://localhost:4500/api/todos/${props.todo._id}`)
       if (res.status === 200) {
         props.setTodos(res.data)
       }
@@ -42,7 +43,7 @@ const OneTodo = (props) => {
 
 
     try {
-      const res = await axios.put('http://localhost:4300/api/todos', updateTodo)
+      const res = await axios.put('http://localhost:4500/api/todos', updateTodo)
       console.log(res);
       if (res.status === 200) {
         console.log("res.data", res.data);

@@ -15,7 +15,7 @@ const Users =() =>{
     useEffect(()=>{getUsers()},[])
     const getUsers = async () => {
         try {  
-            const res = await axios.get('http://localhost:4300/api/users')
+            const res = await axios.get('http://localhost:4500/api/users')
             if (res.status === 200) {
                  setUsers(res.data);
             }
@@ -25,7 +25,7 @@ const Users =() =>{
         console.log(users)
         const searchByUserName=async()=>{
                 try {  
-                    const res = await axios.get(`http://localhost:4300/api/users/byUserName/${userNameRef.current.value}`)
+                    const res = await axios.get(`http://localhost:4500/api/users/byUserName/${userNameRef.current.value}`)
                     if (res.status === 200) {
                     setUsers(res.data);
                     }

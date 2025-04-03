@@ -12,7 +12,7 @@ const OnePost = (props) => {
   const deletePosts = async () => {
 
     try {
-      const res = await axios.delete(`http://localhost:4300/api/posts/${props.post._id}`)
+      const res = await axios.delete(`http://localhost:4500/api/posts/${props.post._id}`)
       if (res.status === 200) {
         props.setPosts(res.data)
       }
@@ -34,7 +34,7 @@ const OnePost = (props) => {
 
 
     try {
-      const res = await axios.put('http://localhost:4300/api/posts', updatePost)
+      const res = await axios.put('http://localhost:4500/api/posts', updatePost)
       console.log(res);
       if (res.status === 200) {
         console.log("res.data", res.data);

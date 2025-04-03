@@ -17,7 +17,7 @@ const Todos =() =>{
     useEffect(()=>{getTodos()},[])
     const getTodos = async () => {
         try {  
-            const res = await axios.get('http://localhost:4300/api/todos')
+            const res = await axios.get('http://localhost:4500/api/todos')
             if (res.status === 200) {
                  setTodos(res.data);
                  setFlag(true)
@@ -29,7 +29,7 @@ const Todos =() =>{
         const searchByTitle=async(titleRef)=>{
             
             try {  
-                const res = await axios.get(`http://localhost:4300/api/todos/byTilte/${titleRef.current.value}`)
+                const res = await axios.get(`http://localhost:4500/api/todos/byTilte/${titleRef.current.value}`)
                 if (res.status === 200) {
                 console.log(res);
                 setTodos(res.data);
@@ -39,7 +39,7 @@ const Todos =() =>{
             }}  
             const getUncompleted=async(titleRef)=>{
                 try {  
-                    const res = await axios.get(`http://localhost:4300/api/todos/unCompleted`)
+                    const res = await axios.get(`http://localhost:4500/api/todos/unCompleted`)
                     if (res.status === 200) {
                         setTodos(res.data);
                         setFlag(false)

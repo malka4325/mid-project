@@ -12,7 +12,7 @@ const OneUser = (props) => {
   const deleteUsers = async () => {
 
     try {
-      const res = await axios.delete(`http://localhost:4300/api/users/${props.user._id}`)
+      const res = await axios.delete(`http://localhost:4500/api/users/${props.user._id}`)
       if (res.status === 200) {
         props.setUsers(res.data)
       }
@@ -36,7 +36,7 @@ const OneUser = (props) => {
     }
     console.log(updateUser);
     try {
-      const res = await axios.put('http://localhost:4300/api/users', updateUser)
+      const res = await axios.put('http://localhost:4500/api/users', updateUser)
       console.log(res);
       if (res.status === 200) {
         console.log("res.data", res.data);

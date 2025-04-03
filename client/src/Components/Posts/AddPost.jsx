@@ -17,7 +17,7 @@ const AddPost = (props) => {
             body: bodyRef.current.value
         }
         try {
-            const res = await axios.post('http://localhost:4300/api/posts', newPost)
+            const res = await axios.post('http://localhost:4500/api/posts', newPost)
             console.log(res);
             if (res.status === 200) {
                 console.log("res.data",res.data);

@@ -16,7 +16,7 @@ const Posts = () => {
     useEffect(() => { getPosts() }, [])
     const getPosts = async () => {
         try {
-            const res = await axios.get('http://localhost:4300/api/posts')
+            const res = await axios.get('http://localhost:4500/api/posts')
             if (res.status === 200) {
                 setPosts(res.data);
             }
@@ -28,7 +28,7 @@ const Posts = () => {
     const searchByTitle = async (titleRef) => {
 
         try {
-            const res = await axios.get(`http://localhost:4300/api/posts/byTitle/${titleRef.current.value}`)
+            const res = await axios.get(`http://localhost:4500/api/posts/byTitle/${titleRef.current.value}`)
             if (res.status === 200) {
                 setPosts(res.data);
             }

@@ -23,7 +23,7 @@ const AddTodo = (props) => {
             tags: tagsRef.current.value.split(",")
         }
         try {
-            const res = await axios.post('http://localhost:4300/api/todos', newTodo)
+            const res = await axios.post('http://localhost:4500/api/todos', newTodo)
             console.log(res);
             if (res.status === 200) {
                 console.log("res.data",res.data);

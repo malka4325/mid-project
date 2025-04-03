@@ -21,7 +21,7 @@ const AddUser = (props) => {
 
         }
         try {
-            const res = await axios.post('http://localhost:4300/api/users', newUser)
+            const res = await axios.post('http://localhost:4500/api/users', newUser)
             console.log(res);
             if (res.status === 200) {
                 console.log("res.data",res.data);
